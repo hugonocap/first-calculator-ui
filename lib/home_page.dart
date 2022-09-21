@@ -49,11 +49,29 @@ class _HomePageState extends State<HomePage> {
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4),
                 itemBuilder: (BuildContext context, int index) {
-                  return MyButton(
-                    buttonText: buttons[index],
-                    color: Colors.deepPurple,
-                    textColor: Colors.grey.shade200,
-                  );
+                  if (index == 0) {
+                    return MyButton(
+                      buttonText: buttons[index],
+                      color: Colors.green,
+                      textColor: Colors.grey.shade300,
+                    );
+                  } else if (index == 1) {
+                    return MyButton(
+                      buttonText: buttons[index],
+                      color: Colors.red,
+                      textColor: Colors.grey.shade300,
+                    );
+                  } else {
+                    return MyButton(
+                      buttonText: buttons[index],
+                      color: isOperator(buttons[index])
+                          ? Colors.deepPurple
+                          : Colors.grey.shade300,
+                      textColor: isOperator(buttons[index])
+                          ? Colors.grey.shade300
+                          : Colors.deepPurple,
+                    );
+                  }
                 },
               ),
             ),
@@ -61,5 +79,12 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+  }
+
+  bool isOperator(String x) {
+    if (x == '%' || x == '/' || x == '+' || x == '-' || x == 'x' || x == '=') {
+      return true;
+    }
+    return false;
   }
 }
