@@ -13,8 +13,7 @@ class _HomePageState extends State<HomePage> {
   var userQuestion = '';
   var userAnswer = '';
 
-  final myTextStyle =
-      TextStyle(fontSize: 30, color: Colors.deepPurple.shade900);
+  final myTextStyle = const TextStyle(fontSize: 30, color: Colors.black87);
 
   final List<String> buttons = [
     'C',
@@ -42,7 +41,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[200],
+      backgroundColor: Colors.grey.shade200,
       body: Column(
         children: <Widget>[
           Expanded(
@@ -93,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                         });
                       },
                       buttonText: buttons[index],
-                      color: Colors.green,
+                      color: Colors.green.shade800,
                       textColor: Colors.grey.shade300,
                     );
                   } else if (index == 1) {
@@ -106,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                         });
                       },
                       buttonText: buttons[index],
-                      color: Colors.red,
+                      color: Colors.red.shade800,
                       textColor: Colors.grey.shade300,
                     );
                   } else if (index == buttons.length - 1) {
@@ -118,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                         });
                       },
                       buttonText: buttons[index],
-                      color: Colors.deepPurple,
+                      color: Colors.black87,
                       textColor: Colors.grey.shade300,
                     );
                   } else {
@@ -131,11 +130,11 @@ class _HomePageState extends State<HomePage> {
                       },
                       buttonText: buttons[index],
                       color: isOperator(buttons[index])
-                          ? Colors.deepPurple
+                          ? Colors.black87
                           : Colors.grey.shade300,
                       textColor: isOperator(buttons[index])
-                          ? Colors.grey.shade300
-                          : Colors.deepPurple,
+                          ? Colors.grey.shade200
+                          : Colors.black87,
                     );
                   }
                 },
